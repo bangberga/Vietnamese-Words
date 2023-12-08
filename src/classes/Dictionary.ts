@@ -8,7 +8,7 @@ class Dictionary {
     this.#filePath = path.resolve(__dirname, "../../data/Viet74K.txt");
 
     const data = readFileSync(this.#filePath, "utf-8");
-    this.#lower_words = data.toLowerCase().split("\r\n");
+    this.#lower_words = data.toLowerCase().split("\n");
   }
 
   has(word: string): boolean {
