@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 
+import rootRouter from "./routes/root";
 import dictionaryRouter from "./routes/dictionary";
 
 const app = express();
@@ -12,6 +13,7 @@ app.set("trust proxy", 1);
 app.use(express.json());
 app.use(cors());
 
+app.use("/", rootRouter);
 app.use("/api/v1/dictionary", dictionaryRouter);
 
 app.listen(PORT, () => {

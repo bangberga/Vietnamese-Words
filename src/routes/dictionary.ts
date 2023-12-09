@@ -1,9 +1,10 @@
 import { Router } from "express";
 
-import { hasWord, randomWord } from "../controllers/dictionary";
+import { getAllWords, hasWord, randomWord } from "../controllers/dictionary";
 
 const router = Router();
 
+router.route("/").get(getAllWords);
 router.route("/hasWord").get(hasWord);
 router.route("/randomWord").get(randomWord);
 

@@ -11,6 +11,10 @@ class Dictionary {
     this.#lower_words = data.toLowerCase().split("\n");
   }
 
+  get lower_words() {
+    return this.#lower_words;
+  }
+
   has(word: string): boolean {
     if (!word) return false;
     return this.#lower_words.indexOf(word.toLowerCase()) > -1;
